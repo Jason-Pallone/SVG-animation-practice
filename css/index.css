@@ -1,0 +1,139 @@
+/* --------------------------
+  Base
+--------------------------- */
+
+body {
+    background: #8069a1;
+    padding-top: 60px;
+  }
+  
+  svg {
+    margin: auto;
+    display: block;
+  }
+  
+  /* --------------------------
+    Keyframes
+  --------------------------- */
+
+  /*
+  ---------star svg keyframes----------
+  */
+  
+  @keyframes grow {
+      0% {
+        transform: scale(0);
+      }
+      30% {
+        transform: scale(1.1);
+      }
+      60% {
+        transform: scale(0.9);
+      }
+  }
+
+  @keyframes turn {
+      0%{
+        transform: rotate(0) scale(0);
+        opacity: 0;
+      }
+      60%{
+        transform: rotate(375deg) scale(1.1);
+      }
+      80%{
+        transform: rotate(355deg) scale(.9)
+      }
+      100%{
+        transform: rotate(360deg) scale(1);
+      }
+  }
+  
+
+  @keyframes pulse {
+      50%{
+          transform: scale(1.4);
+      }
+  }
+
+
+  /*
+  ------------frog svg keyframes------------------
+  */
+
+  @keyframes offset {
+      100% { 
+          stroke-dashoffset: 0;
+      }
+  }
+
+  @keyframes fill-it {
+      100%{
+          fill:#6fbc6d
+      }
+  }
+
+  /* --------------------------
+    SVG Styles
+  --------------------------- */
+
+  /* 
+  ---------------star svg--------------
+ */
+
+  .badge * {
+      transform-origin: 180px 180px;
+  }
+  
+  .outer,
+  .inner,
+  .inline{
+      animation: grow 1s ease-out backwards;
+  }
+
+  
+  .inner{
+      animation-delay: .1s;
+  }
+
+  .inline{
+      animation-delay: .15s;
+  }
+
+  .star{
+      animation: turn 1.1s .2s ease-out backwards;
+  }
+
+  .star circle{
+      animation: pulse .7s 1.5s;
+  }
+
+  .star circle:nth-of-type(2) {
+      animation-delay: 1.6s;
+  }
+
+  .star circle:nth-of-type(3) {
+    animation-delay: 1.7s;
+}
+
+  .star circle:nth-of-type(4) {
+    animation-delay: 1.8s;
+    }
+
+  .star circle:nth-of-type(5) {
+    animation-delay: 1.9s;
+    }
+
+
+    /*
+    -----------frog foot svg-------------
+    */
+
+
+    .logo {
+        stroke: #6fbc6e;
+        stroke-width: 2;
+        stroke-dasharray: 810;
+        stroke-dashoffset: 810;
+        animation: offset 5s linear forwards, fill-it .8s 5.1s forwards;
+    }
+
